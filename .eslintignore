@@ -1,0 +1,12 @@
+**/dist/**
+**/node_modules/**
+**/server.js
+**/webpack.config*.js
+**/flow-typed/**
+**/app/**
+**/bootstrap/**
+**/config/**
+**/database/**
+**/public/**
+**/storage/**
+**/vendor/**

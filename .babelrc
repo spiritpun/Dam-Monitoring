@@ -1,0 +1,67 @@
+{
+  "plugins": [
+    "transform-decorators-legacy",
+    [
+      "transform-runtime",
+      {
+        "polyfill": false,
+        "regenerator": true
+      }
+    ],
+    [
+      "import",
+      {
+        "libraryName": "antd"
+      }
+    ],
+    [
+      "babel-plugin-root-import",
+      [
+        {
+          "rootPathPrefix": "~",
+          "rootPathSuffix": "resources/assets/js"
+        }
+      ]
+    ]
+  ],
+  "presets": [
+    [
+      "env",
+      {
+        "targets": {
+          "browsers": ["last 2 versions", "safari >= 7"]
+        },
+        "modules": false
+      }
+    ],
+    "react",
+    "stage-1"
+  ],
+  "env": {
+    "development": {
+      "plugins": [
+        "react-hot-loader/babel"
+      ]
+    },
+    "test": {
+      "presets": [
+        [
+          "env",
+          {
+            "targets": { "node": "current" }
+          }
+        ]
+      ]
+    },
+    "production": {
+      "only": [
+        "resources/assets/js"
+      ],
+      "plugins": [
+        "transform-react-remove-prop-types",
+        "transform-react-constant-elements",
+        "transform-react-inline-elements"
+      ]
+    }
+  }
+}
